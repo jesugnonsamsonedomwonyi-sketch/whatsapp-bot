@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask
 import os
 
 app = Flask(__name__)
@@ -7,12 +7,6 @@ app = Flask(__name__)
 def home():
     return "Bot is running online"
 
-@app.route("/webhook", methods=["POST"])
-def webhook():
-    data = request.json
-    print("Incoming:", data)
-    return {"status": "ok"}
-
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
