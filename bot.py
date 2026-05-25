@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Bot is running online"
+    return "Bot running"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
